@@ -1,0 +1,162 @@
+{
+ "det_scb5_s0": {
+  "map50_before": 68.05,
+  "map5095_before": 51.37,
+  "map50_after": 66.15,
+  "map5095_after": 49.11,
+  "bn_layers": 81,
+  "recal_images": 5193
+ },
+ "det_scb5_s1": {
+  "map50_before": 67.91,
+  "map5095_before": 51.02,
+  "map50_after": 66.26,
+  "map5095_after": 49.07,
+  "bn_layers": 81,
+  "recal_images": 5193
+ },
+ "det_scb5_s2": {
+  "map50_before": 68.8,
+  "map5095_before": 51.95,
+  "map50_after": 66.91,
+  "map5095_after": 49.68,
+  "bn_layers": 81,
+  "recal_images": 5193
+ },
+ "det_l_s0": {
+  "map50_before": 72.18,
+  "map5095_before": 55.6,
+  "map50_after": 71.0,
+  "map5095_after": 53.89,
+  "bn_layers": 167,
+  "recal_images": 5193
+ },
+ "mtl_scb5_s0": {
+  "map50_before": 64.98,
+  "map5095_before": 47.85,
+  "map50_after": 67.9,
+  "map5095_after": 51.44,
+  "bn_layers": 81,
+  "recal_images": 5193
+ },
+ "mtl_en_s_s0": {
+  "map50_before": 60.83,
+  "map5095_before": 43.2,
+  "map50_after": 63.65,
+  "map5095_after": 46.44,
+  "bn_layers": 81,
+  "recal_images": 5193
+ },
+ "mtl_en_l_s0": {
+  "map50_before": 60.06,
+  "map5095_before": 43.43,
+  "map50_after": 61.87,
+  "map5095_after": 45.85,
+  "bn_layers": 167,
+  "recal_images": 5193
+ },
+ "mtl_en_s_s1": {
+  "map50_before": 60.67,
+  "map5095_before": 43.36,
+  "map50_after": 63.59,
+  "map5095_after": 46.67,
+  "bn_layers": 81,
+  "recal_images": 5193
+ },
+ "mtl_en_s_s2": {
+  "map50_before": 60.24,
+  "map5095_before": 42.81,
+  "map50_after": 63.49,
+  "map5095_after": 46.46,
+  "bn_layers": 81,
+  "recal_images": 5193
+ },
+ "mtl_en_s_lam0_s0": {
+  "map50_before": 65.16,
+  "map5095_before": 48.27,
+  "map50_after": 67.08,
+  "map5095_after": 50.4,
+  "bn_layers": 81,
+  "recal_images": 5193
+ },
+ "mtl_en_s_shuf_s0": {
+  "map50_before": 65.26,
+  "map5095_before": 47.62,
+  "map50_after": 67.65,
+  "map5095_after": 50.71,
+  "bn_layers": 81,
+  "recal_images": 5193
+ },
+ "mtl_en_s_eb16_s0": {
+  "map50_before": 57.4,
+  "map5095_before": 39.98,
+  "map50_after": 61.48,
+  "map5095_after": 44.24,
+  "bn_layers": 81,
+  "recal_images": 5193
+ },
+ "mtl_en_s_lam02_s0": {
+  "map50_before": 64.67,
+  "map5095_before": 47.72,
+  "map50_after": 67.91,
+  "map5095_after": 50.76,
+  "bn_layers": 81,
+  "recal_images": 5193
+ },
+ "mtl_en_s_lam5_s0": {
+  "map50_before": 51.65,
+  "map5095_before": 34.27,
+  "map50_after": 55.46,
+  "map5095_after": 38.27,
+  "bn_layers": 81,
+  "recal_images": 5193
+ },
+ "det_l_s1": {
+  "map50_before": 70.71,
+  "map5095_before": 54.81,
+  "map50_after": 70.51,
+  "map5095_after": 54.6,
+  "bn_layers": 167,
+  "recal_images": 5193
+ },
+ "det_l_s2": {
+  "map50_before": 72.11,
+  "map5095_before": 55.89,
+  "map50_after": 72.4,
+  "map5095_after": 56.07,
+  "bn_layers": 167,
+  "recal_images": 5193
+ },
+ "mtl_l_s0": {
+  "map50_before": 68.39,
+  "map5095_before": 52.09,
+  "map50_after": 70.5,
+  "map5095_after": 54.37,
+  "bn_layers": 167,
+  "recal_images": 5193
+ },
+ "mtl_en_s_bnfrozen_s0": {
+  "map50_before": 65.41,
+  "map5095_before": 47.84,
+  "map50_after": 64.76,
+  "map5095_after": 47.17,
+  "bn_layers": 81,
+  "recal_images": 5193
+ },
+ "mtl_en_s_lam02_s2": {
+  "map50_before": 64.21,
+  "map5095_before": 47.21,
+  "map50_after": 67.41,
+  "map5095_after": 50.84,
+  "bn_layers": 81,
+  "recal_images": 5193
+ },
+ "mtl_en_s_lam02_s1": {
+  "map50_before": 65.27,
+  "map5095_before": 47.74,
+  "map50_after": 68.45,
+  "map5095_after": 51.55,
+  "bn_layers": 81,
+  "recal_images": 5193
+ }
+}

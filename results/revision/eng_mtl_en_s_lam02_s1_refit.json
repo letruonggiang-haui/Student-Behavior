@@ -1,0 +1,61 @@
+{
+ "weights": "~/student_behavior/runs/mtl_en_s_lam02_s1/weights/best.pt",
+ "eng_weights": "~/student_behavior/runs/mtl_en_s_lam02_s1/eng_calibrated.pt",
+ "tag": "mtl_en_s_lam02_s1_refit",
+ "val": {
+  "n": 1071,
+  "subjects": 11,
+  "floor": 53.13,
+  "acc": 37.07,
+  "acc_ci": [
+   25.6,
+   50.4
+  ],
+  "bal": 48.18,
+  "bal_ci": [
+   36.7,
+   54.6
+  ],
+  "macro_f1": 39.71,
+  "pred_dist": [
+   180,
+   294,
+   387,
+   210
+  ],
+  "gt_dist": [
+   132,
+   97,
+   273,
+   569
+  ]
+ },
+ "test": {
+  "n": 2256,
+  "subjects": 26,
+  "floor": 50.27,
+  "acc": 40.47,
+  "acc_ci": [
+   31.8,
+   49.5
+  ],
+  "bal": 40.91,
+  "bal_ci": [
+   33.9,
+   46.5
+  ],
+  "macro_f1": 39.02,
+  "pred_dist": [
+   377,
+   468,
+   878,
+   533
+  ],
+  "gt_dist": [
+   457,
+   246,
+   419,
+   1134
+  ]
+ }
+}

@@ -1,0 +1,28 @@
+cff-version: 1.2.0
+message: "If you use this code or these result files, please cite the paper below."
+title: "The accuracy cost of adding a student-engagement head to a classroom behaviour detector: code and result files"
+authors:
+  - family-names: "Le"
+    given-names: "Truong Giang"
+    orcid: "https://orcid.org/0000-0001-7677-7615"
+    affiliation: "Hanoi University of Industry"
+  - family-names: "Nguyen"
+    given-names: "Trung Viet"
+    affiliation: "University of Transport and Communications; Graduate University of Science and Technology, Vietnam Academy of Science and Technology"
+  - family-names: "Nguyen"
+    given-names: "Nhu Son"
+    affiliation: "Institute of Information Technology, Vietnam Academy of Science and Technology"
+repository-code: "https://github.com/letruonggiang-haui/Student-Behavior"
+license: GPL-3.0
+preferred-citation:
+  type: unpublished
+  title: "The accuracy cost of adding a student-engagement head to a classroom behaviour detector"
+  authors:
+    - family-names: "Le"
+      given-names: "Truong Giang"
+    - family-names: "Nguyen"
+      given-names: "Trung Viet"
+    - family-names: "Nguyen"
+      given-names: "Nhu Son"
+  year: 2026
+  notes: "Manuscript under review."

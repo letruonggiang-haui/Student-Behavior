@@ -1,0 +1,61 @@
+{
+ "weights": "~/student_behavior/runs/mtl_en_s_s0/weights/best.pt",
+ "eng_weights": null,
+ "tag": "mtl_s_s0_joint",
+ "val": {
+  "n": 1071,
+  "subjects": 11,
+  "floor": 53.13,
+  "acc": 31.09,
+  "acc_ci": [
+   20.8,
+   44.2
+  ],
+  "bal": 43.75,
+  "bal_ci": [
+   34.5,
+   49.6
+  ],
+  "macro_f1": 30.87,
+  "pred_dist": [
+   271,
+   185,
+   563,
+   52
+  ],
+  "gt_dist": [
+   132,
+   97,
+   273,
+   569
+  ]
+ },
+ "test": {
+  "n": 2256,
+  "subjects": 26,
+  "floor": 50.27,
+  "acc": 32.98,
+  "acc_ci": [
+   24.1,
+   42.0
+  ],
+  "bal": 38.94,
+  "bal_ci": [
+   32.8,
+   43.8
+  ],
+  "macro_f1": 32.8,
+  "pred_dist": [
+   550,
+   359,
+   1123,
+   224
+  ],
+  "gt_dist": [
+   457,
+   246,
+   419,
+   1134
+  ]
+ }
+}

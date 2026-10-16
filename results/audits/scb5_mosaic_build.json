@@ -1,0 +1,38 @@
+{
+ "scb5_hrw": {
+  "stats": {
+   "train": 5193,
+   "boxes": 47372,
+   "val": 1671
+  },
+  "classes": {
+   "hand-raising": 13453,
+   "read": 24078,
+   "write": 9841
+  },
+  "yaml": "~/student_behavior/work/scb5_hrw.yaml"
+ },
+ "scb5_bth": {
+  "stats": {
+   "train": 1905,
+   "boxes": 16118,
+   "val": 505
+  },
+  "classes": {
+   "TurnHead": 11156,
+   "BowHead": 4962
+  },
+  "yaml": "~/student_behavior/work/scb5_bth.yaml"
+ },
+ "scb5_dis": {
+  "stats": {
+   "train": 605,
+   "boxes": 5392,
+   "val": 259
+  },
+  "classes": {
+   "discuss": 5392
+  },
+  "yaml": "~/student_behavior/work/scb5_dis.yaml"
+ }
+}

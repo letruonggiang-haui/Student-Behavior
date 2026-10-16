@@ -1,0 +1,7 @@
+{
+ "images": 947,
+ "pairs_dhash_le_4": 639,
+ "images_in_a_near_duplicate_pair": 377,
+ "pairs_across_identity_folders": 200,
+ "pairs_same_class": 639
+}

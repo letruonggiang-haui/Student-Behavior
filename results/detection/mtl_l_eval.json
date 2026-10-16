@@ -1,0 +1,32 @@
+{
+ "mtl_l_s0": {
+  "mAP50": 68.39,
+  "mAP50_95": 52.09,
+  "params_M": 25.41,
+  "per_class": {
+   "hand-raising": 75.02,
+   "read": 62.91,
+   "write": 67.25
+  }
+ },
+ "mtl_l_s1": {
+  "mAP50": 67.56,
+  "mAP50_95": 50.92,
+  "params_M": 25.41,
+  "per_class": {
+   "hand-raising": 73.78,
+   "read": 61.28,
+   "write": 67.63
+  }
+ },
+ "mtl_l_s2": {
+  "mAP50": 68.29,
+  "mAP50_95": 51.85,
+  "params_M": 25.41,
+  "per_class": {
+   "hand-raising": 73.59,
+   "read": 62.27,
+   "write": 69.0
+  }
+ }
+}

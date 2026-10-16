@@ -1,0 +1,241 @@
+{
+ "note": "Revision of the transfer probe (reviewers R1-M4, R2-M6, R3-M7).\n\n1. Vietnamese probe (leave-one-subject-out, same protocol as cross_country_scb5.py) repeated\n   for every available seed of each backbone, plus the multi-task model whose head was\n   trained on EngageNet, so backbone variance and the engagement source are represented.\n2. Within-domain control: the same frozen-feature linear probe on single-student crops cut\n   from SCB5 ground-truth boxes (train-split crops for fitting, validation-split crops for\n   testing), resized to 640 px like the Vietnamese images. If the COCO backbone also wins\n   here, the gap is about task geometry (whole-image classification of one student from\n   detection features), not about the country of the training data.\nThe 'generic' backbone is the COCO-pretrained YOLO11s checkpoint (yolo11s.pt), the same\ninitialisation every trained model starts from.",
+ "vn": {
+  "COCO | yolo11s.pt": {
+   "folds": [
+    96.46,
+    94.23,
+    90.78,
+    80.74
+   ],
+   "mean": 90.55
+  },
+  "EngageNet frames, no gradient | mtl_en_s_lam0_s0": {
+   "folds": [
+    91.15,
+    90.0,
+    83.87,
+    74.59
+   ],
+   "mean": 84.9
+  },
+  "EngageNet frames, shuffled labels | mtl_en_s_shuf_s0": {
+   "folds": [
+    85.4,
+    85.38,
+    74.19,
+    68.85
+   ],
+   "mean": 78.45
+  },
+  "Detection-only | det_scb5_s0": {
+   "folds": [
+    80.53,
+    83.85,
+    83.87,
+    77.05
+   ],
+   "mean": 81.33
+  },
+  "Detection-only | det_scb5_s1": {
+   "folds": [
+    78.76,
+    81.92,
+    82.49,
+    71.31
+   ],
+   "mean": 78.62
+  },
+  "Detection-only | det_scb5_s2": {
+   "folds": [
+    89.82,
+    86.92,
+    84.79,
+    75.82
+   ],
+   "mean": 84.34
+  },
+  "Multi-task, Kaggle head | mtl_scb5_s0": {
+   "folds": [
+    85.4,
+    82.31,
+    74.65,
+    66.8
+   ],
+   "mean": 77.29
+  },
+  "Multi-task, Kaggle head | mtl_scb5_s1": {
+   "folds": [
+    76.11,
+    88.46,
+    84.33,
+    72.95
+   ],
+   "mean": 80.46
+  },
+  "Multi-task, Kaggle head | mtl_scb5_s2": {
+   "folds": [
+    81.42,
+    82.69,
+    82.03,
+    73.77
+   ],
+   "mean": 79.98
+  },
+  "Multi-task, EngageNet head | mtl_en_s_s0": {
+   "folds": [
+    54.87,
+    69.62,
+    56.68,
+    56.15
+   ],
+   "mean": 59.33
+  },
+  "Multi-task, EngageNet head | mtl_en_s_s1": {
+   "folds": [
+    46.9,
+    57.31,
+    57.14,
+    47.13
+   ],
+   "mean": 52.12
+  },
+  "Multi-task, EngageNet head | mtl_en_s_s2": {
+   "folds": [
+    44.69,
+    57.69,
+    53.92,
+    46.72
+   ],
+   "mean": 50.75
+  }
+ },
+ "scb_within": {
+  "COCO | yolo11s.pt": {
+   "acc": 52.56,
+   "macro_f1": 52.18,
+   "recall": {
+    "hand-raising": 0.71,
+    "read": 0.4633,
+    "write": 0.4033
+   }
+  },
+  "EngageNet frames, no gradient | mtl_en_s_lam0_s0": {
+   "acc": 56.0,
+   "macro_f1": 55.88,
+   "recall": {
+    "hand-raising": 0.6967,
+    "read": 0.4533,
+    "write": 0.53
+   }
+  },
+  "EngageNet frames, shuffled labels | mtl_en_s_shuf_s0": {
+   "acc": 54.67,
+   "macro_f1": 54.29,
+   "recall": {
+    "hand-raising": 0.7067,
+    "read": 0.4233,
+    "write": 0.51
+   }
+  },
+  "Detection-only | det_scb5_s0": {
+   "acc": 58.11,
+   "macro_f1": 58.32,
+   "recall": {
+    "hand-raising": 0.6967,
+    "read": 0.5033,
+    "write": 0.5433
+   }
+  },
+  "Detection-only | det_scb5_s1": {
+   "acc": 59.78,
+   "macro_f1": 58.93,
+   "recall": {
+    "hand-raising": 0.7933,
+    "read": 0.41,
+    "write": 0.59
+   }
+  },
+  "Detection-only | det_scb5_s2": {
+   "acc": 55.11,
+   "macro_f1": 54.87,
+   "recall": {
+    "hand-raising": 0.7133,
+    "read": 0.48,
+    "write": 0.46
+   }
+  },
+  "Multi-task, Kaggle head | mtl_scb5_s0": {
+   "acc": 56.56,
+   "macro_f1": 56.19,
+   "recall": {
+    "hand-raising": 0.7467,
+    "read": 0.5,
+    "write": 0.45
+   }
+  },
+  "Multi-task, Kaggle head | mtl_scb5_s1": {
+   "acc": 53.44,
+   "macro_f1": 52.96,
+   "recall": {
+    "hand-raising": 0.7133,
+    "read": 0.4033,
+    "write": 0.4867
+   }
+  },
+  "Multi-task, Kaggle head | mtl_scb5_s2": {
+   "acc": 52.0,
+   "macro_f1": 51.97,
+   "recall": {
+    "hand-raising": 0.68,
+    "read": 0.3933,
+    "write": 0.4867
+   }
+  },
+  "Multi-task, EngageNet head | mtl_en_s_s0": {
+   "acc": 49.56,
+   "macro_f1": 49.03,
+   "recall": {
+    "hand-raising": 0.6267,
+    "read": 0.3567,
+    "write": 0.5033
+   }
+  },
+  "Multi-task, EngageNet head | mtl_en_s_s1": {
+   "acc": 45.56,
+   "macro_f1": 44.58,
+   "recall": {
+    "hand-raising": 0.6367,
+    "read": 0.2867,
+    "write": 0.4433
+   }
+  },
+  "Multi-task, EngageNet head | mtl_en_s_s2": {
+   "acc": 47.11,
+   "macro_f1": 46.12,
+   "recall": {
+    "hand-raising": 0.63,
+    "read": 0.2867,
+    "write": 0.4967
+   }
+  }
+ },
+ "scb_within_counts": {
+  "train": {
+   "0": 600,
+   "1": 600,
+   "2": 600
+  },
+  "val": {
+   "0": 300,
+   "1": 300,
+   "2": 300
+  }
+ },
+ "subjects": [
+  "ID1",
+  "ID2",
+  "ID3",
+  "ID4"
+ ]
+}

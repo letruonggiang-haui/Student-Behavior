@@ -1,0 +1,80 @@
+{
+  "subjects": [
+    "ID1",
+    "ID2",
+    "ID3",
+    "ID4"
+  ],
+  "n_samples": 947,
+  "classes": [
+    "handrise",
+    "look_forward",
+    "read",
+    "sleep",
+    "stand",
+    "turn_head",
+    "write"
+  ],
+  "results": {
+    "COCO (no classroom data)": {
+      "acc_mean": 0.9055,
+      "acc_std": 0.0695,
+      "acc_folds": [
+        0.9646,
+        0.9423,
+        0.9078,
+        0.8074
+      ],
+      "macroF1_mean": 0.888,
+      "per_class_recall_mean": {
+        "handrise": 0.934,
+        "look_forward": 0.9075,
+        "read": 0.792,
+        "sleep": 0.9194,
+        "stand": 0.8921,
+        "turn_head": 0.9392,
+        "write": 0.9564
+      }
+    },
+    "Detection-only (SCB5, 3-class)": {
+      "acc_mean": 0.8132,
+      "acc_std": 0.0325,
+      "acc_folds": [
+        0.8053,
+        0.8385,
+        0.8387,
+        0.7705
+      ],
+      "macroF1_mean": 0.7981,
+      "per_class_recall_mean": {
+        "handrise": 0.8482,
+        "look_forward": 0.9507,
+        "read": 0.5903,
+        "sleep": 0.8178,
+        "stand": 0.8152,
+        "turn_head": 0.9032,
+        "write": 0.8613
+      }
+    },
+    "Proposed multi-task (SCB5, 3-class)": {
+      "acc_mean": 0.7729,
+      "acc_std": 0.0832,
+      "acc_folds": [
+        0.854,
+        0.8231,
+        0.7465,
+        0.668
+      ],
+      "macroF1_mean": 0.7594,
+      "per_class_recall_mean": {
+        "handrise": 0.8713,
+        "look_forward": 0.8496,
+        "read": 0.6886,
+        "sleep": 0.733,
+        "stand": 0.8258,
+        "turn_head": 0.8354,
+        "write": 0.7239
+      }
+    }
+  }
+}

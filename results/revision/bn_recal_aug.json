@@ -1,0 +1,29 @@
+{
+ "det_scb5_s0": {
+  "map50_before": 68.05,
+  "map5095_before": 51.37,
+  "map50_after": 64.75,
+  "map5095_after": 47.86,
+  "bn_layers": 81,
+  "recal_images": 5193,
+  "stream": "training dataloader, mosaic closed, other augmentation on"
+ },
+ "det_scb5_s1": {
+  "map50_before": 67.91,
+  "map5095_before": 51.02,
+  "map50_after": 64.84,
+  "map5095_after": 47.68,
+  "bn_layers": 81,
+  "recal_images": 5193,
+  "stream": "training dataloader, mosaic closed, other augmentation on"
+ },
+ "det_scb5_s2": {
+  "map50_before": 68.8,
+  "map5095_before": 51.95,
+  "map50_after": 65.82,
+  "map5095_after": 48.55,
+  "bn_layers": 81,
+  "recal_images": 5193,
+  "stream": "training dataloader, mosaic closed, other augmentation on"
+ }
+}

@@ -1,0 +1,61 @@
+{
+ "weights": "~/student_behavior/runs/det_scb5_s0/weights/best.pt",
+ "eng_weights": "~/student_behavior/runs/eng_ref_det_s/eng_calibrated.pt",
+ "tag": "det_frozen",
+ "val": {
+  "n": 1071,
+  "subjects": 11,
+  "floor": 53.13,
+  "acc": 32.96,
+  "acc_ci": [
+   20.0,
+   47.0
+  ],
+  "bal": 31.61,
+  "bal_ci": [
+   24.6,
+   44.0
+  ],
+  "macro_f1": 24.16,
+  "pred_dist": [
+   150,
+   441,
+   45,
+   435
+  ],
+  "gt_dist": [
+   132,
+   97,
+   273,
+   569
+  ]
+ },
+ "test": {
+  "n": 2256,
+  "subjects": 26,
+  "floor": 50.27,
+  "acc": 33.91,
+  "acc_ci": [
+   21.7,
+   47.6
+  ],
+  "bal": 31.82,
+  "bal_ci": [
+   23.6,
+   39.9
+  ],
+  "macro_f1": 28.22,
+  "pred_dist": [
+   688,
+   754,
+   72,
+   742
+  ],
+  "gt_dist": [
+   457,
+   246,
+   419,
+   1134
+  ]
+ }
+}

@@ -1,0 +1,131 @@
+{
+ "scb5_hrw": {
+  "train": {
+   "images": 5193,
+   "boxes_raw": 34524,
+   "boxes_dedup": 34068,
+   "duplicates": 456,
+   "pct_dup": 1.32,
+   "images_with_dup": 30,
+   "max_dup_in_one_image": 28,
+   "class_raw": {
+    "hand-raising": 10538,
+    "read": 17539,
+    "write": 6447
+   },
+   "class_dedup": {
+    "hand-raising": 10538,
+    "read": 17200,
+    "write": 6330
+   }
+  },
+  "val": {
+   "images": 1671,
+   "boxes_raw": 12848,
+   "boxes_dedup": 11780,
+   "duplicates": 1068,
+   "pct_dup": 8.31,
+   "images_with_dup": 79,
+   "max_dup_in_one_image": 26,
+   "class_raw": {
+    "hand-raising": 2915,
+    "read": 6539,
+    "write": 3394
+   },
+   "class_dedup": {
+    "hand-raising": 2914,
+    "read": 6041,
+    "write": 2825
+   }
+  },
+  "total": {
+   "images": 6864,
+   "boxes_raw": 47372,
+   "boxes_dedup": 45848,
+   "duplicates": 1524,
+   "pct_dup": 3.22
+  }
+ },
+ "scb5_bth": {
+  "train": {
+   "images": 1905,
+   "boxes_raw": 12365,
+   "boxes_dedup": 11076,
+   "duplicates": 1289,
+   "pct_dup": 10.42,
+   "images_with_dup": 143,
+   "max_dup_in_one_image": 32,
+   "class_raw": {
+    "TurnHead": 7943,
+    "BowHead": 4422
+   },
+   "class_dedup": {
+    "TurnHead": 7518,
+    "BowHead": 3558
+   }
+  },
+  "val": {
+   "images": 505,
+   "boxes_raw": 3753,
+   "boxes_dedup": 3582,
+   "duplicates": 171,
+   "pct_dup": 4.56,
+   "images_with_dup": 22,
+   "max_dup_in_one_image": 15,
+   "class_raw": {
+    "BowHead": 540,
+    "TurnHead": 3213
+   },
+   "class_dedup": {
+    "BowHead": 539,
+    "TurnHead": 3043
+   }
+  },
+  "total": {
+   "images": 2410,
+   "boxes_raw": 16118,
+   "boxes_dedup": 14658,
+   "duplicates": 1460,
+   "pct_dup": 9.06
+  }
+ },
+ "scb5_dis": {
+  "train": {
+   "images": 605,
+   "boxes_raw": 3607,
+   "boxes_dedup": 3476,
+   "duplicates": 131,
+   "pct_dup": 3.63,
+   "images_with_dup": 23,
+   "max_dup_in_one_image": 7,
+   "class_raw": {
+    "discuss": 3607
+   },
+   "class_dedup": {
+    "discuss": 3476
+   }
+  },
+  "val": {
+   "images": 259,
+   "boxes_raw": 1785,
+   "boxes_dedup": 1630,
+   "duplicates": 155,
+   "pct_dup": 8.68,
+   "images_with_dup": 20,
+   "max_dup_in_one_image": 14,
+   "class_raw": {
+    "discuss": 1785
+   },
+   "class_dedup": {
+    "discuss": 1630
+   }
+  },
+  "total": {
+   "images": 864,
+   "boxes_raw": 5392,
+   "boxes_dedup": 5106,
+   "duplicates": 286,
+   "pct_dup": 5.3
+  }
+ }
+}

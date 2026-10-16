@@ -1,0 +1,136 @@
+diff --git a/detect.py b/detect.py
+index 5e0c441..c135429 100644
+--- a/detect.py
++++ b/detect.py
+@@ -45,7 +45,7 @@ def detect(save_img=False):
+     classify = False
+     if classify:
+         modelc = load_classifier(name='resnet101', n=2)  # initialize
+-        modelc.load_state_dict(torch.load('weights/resnet101.pt', map_location=device)['model']).to(device).eval()
++        modelc.load_state_dict(torch.load('weights/resnet101.pt', map_location=device, weights_only=False)['model']).to(device).eval()
+ 
+     # Set Dataloader
+     vid_path, vid_writer = None, None
+diff --git a/hubconf.py b/hubconf.py
+index 50ff257..01287a0 100644
+--- a/hubconf.py
++++ b/hubconf.py
+@@ -37,7 +37,7 @@ def create(name, pretrained, channels, classes, autoshape):
+         if pretrained:
+             fname = f'{name}.pt'  # checkpoint filename
+             attempt_download(fname)  # download if not found locally
+-            ckpt = torch.load(fname, map_location=torch.device('cpu'))  # load
++            ckpt = torch.load(fname, map_location=torch.device('cpu', weights_only=False))  # load
+             msd = model.state_dict()  # model state_dict
+             csd = ckpt['model'].float().state_dict()  # checkpoint state_dict as FP32
+             csd = {k: v for k, v in csd.items() if msd[k].shape == v.shape}  # filter
+@@ -65,7 +65,7 @@ def custom(path_or_model='path/to/model.pt', autoshape=True):
+     Returns:
+         pytorch model
+     """
+-    model = torch.load(path_or_model, map_location=torch.device('cpu')) if isinstance(path_or_model, str) else path_or_model  # load checkpoint
++    model = torch.load(path_or_model, map_location=torch.device('cpu', weights_only=False)) if isinstance(path_or_model, str) else path_or_model  # load checkpoint
+     if isinstance(model, dict):
+         model = model['ema' if model.get('ema') else 'model']  # load model
+ 
+diff --git a/models/experimental.py b/models/experimental.py
+index 735d7aa..a81196c 100644
+--- a/models/experimental.py
++++ b/models/experimental.py
+@@ -249,7 +249,7 @@ def attempt_load(weights, map_location=None):
+     model = Ensemble()
+     for w in weights if isinstance(weights, list) else [weights]:
+         attempt_download(w)
+-        ckpt = torch.load(w, map_location=map_location)  # load
++        ckpt = torch.load(w, map_location=map_location, weights_only=False)  # load
+         model.append(ckpt['ema' if ckpt.get('ema') else 'model'].float().fuse().eval())  # FP32 model
+     
+     # Compatibility updates
+diff --git a/test.py b/test.py
+index 17b4806..67e0f73 100644
+--- a/test.py
++++ b/test.py
+@@ -1,3 +1,4 @@
++import torch_compat  # noqa: F401
+ import argparse
+ import json
+ import os
+diff --git a/train.py b/train.py
+index 86c7e48..23d71f4 100644
+--- a/train.py
++++ b/train.py
+@@ -1,3 +1,4 @@
++import torch_compat  # noqa: F401
+ import argparse
+ import logging
+ import math
+@@ -68,7 +69,7 @@ def train(hyp, opt, device, tb_writer=None):
+     loggers = {'wandb': None}  # loggers dict
+     if rank in [-1, 0]:
+         opt.hyp = hyp  # add hyperparameters
+-        run_id = torch.load(weights, map_location=device).get('wandb_id') if weights.endswith('.pt') and os.path.isfile(weights) else None
++        run_id = torch.load(weights, map_location=device, weights_only=False).get('wandb_id') if weights.endswith('.pt') and os.path.isfile(weights) else None
+         wandb_logger = WandbLogger(opt, Path(opt.save_dir).stem, run_id, data_dict)
+         loggers['wandb'] = wandb_logger.wandb
+         data_dict = wandb_logger.data_dict
+@@ -84,7 +85,7 @@ def train(hyp, opt, device, tb_writer=None):
+     if pretrained:
+         with torch_distributed_zero_first(rank):
+             attempt_download(weights)  # download if not found locally
+-        ckpt = torch.load(weights, map_location=device)  # load checkpoint
++        ckpt = torch.load(weights, map_location=device, weights_only=False)  # load checkpoint
+         model = Model(opt.cfg or ckpt['model'].yaml, ch=3, nc=nc, anchors=hyp.get('anchors')).to(device)  # create
+         exclude = ['anchor'] if (opt.cfg or hyp.get('anchors')) and not opt.resume else []  # exclude keys
+         state_dict = ckpt['model'].float().state_dict()  # to FP32
+diff --git a/train_aux.py b/train_aux.py
+index 0e8053f..9f19351 100644
+--- a/train_aux.py
++++ b/train_aux.py
+@@ -84,7 +84,7 @@ def train(hyp, opt, device, tb_writer=None):
+     if pretrained:
+         with torch_distributed_zero_first(rank):
+             attempt_download(weights)  # download if not found locally
+-        ckpt = torch.load(weights, map_location=device)  # load checkpoint
++        ckpt = torch.load(weights, map_location=device, weights_only=False)  # load checkpoint
+         model = Model(opt.cfg or ckpt['model'].yaml, ch=3, nc=nc, anchors=hyp.get('anchors')).to(device)  # create
+         exclude = ['anchor'] if (opt.cfg or hyp.get('anchors')) and not opt.resume else []  # exclude keys
+         state_dict = ckpt['model'].float().state_dict()  # to FP32
+diff --git a/utils/datasets.py b/utils/datasets.py
+index 5fe4f7b..e890dc0 100644
+--- a/utils/datasets.py
++++ b/utils/datasets.py
+@@ -1283,7 +1283,7 @@ def extract_boxes(path='../coco/'):  # from utils.datasets import *; extract_box
+                     b = x[1:] * [w, h, w, h]  # box
+                     # b[2:] = b[2:].max()  # rectangle to square
+                     b[2:] = b[2:] * 1.2 + 3  # pad
+-                    b = xywh2xyxy(b.reshape(-1, 4)).ravel().astype(np.int)
++                    b = xywh2xyxy(b.reshape(-1, 4)).ravel().astype(int)
+ 
+                     b[[0, 2]] = np.clip(b[[0, 2]], 0, w)  # clip boxes outside of image
+                     b[[1, 3]] = np.clip(b[[1, 3]], 0, h)
+diff --git a/utils/general.py b/utils/general.py
+index decdcc6..c3d4887 100644
+--- a/utils/general.py
++++ b/utils/general.py
+@@ -799,7 +799,7 @@ def non_max_suppression_kpt(prediction, conf_thres=0.25, iou_thres=0.45, classes
+ 
+ def strip_optimizer(f='best.pt', s=''):  # from utils.general import *; strip_optimizer()
+     # Strip optimizer from 'f' to finalize training, optionally save as 's'
+-    x = torch.load(f, map_location=torch.device('cpu'))
++    x = torch.load(f, map_location=torch.device('cpu', weights_only=False))
+     if x.get('ema'):
+         x['model'] = x['ema']  # replace model with ema
+     for k in 'optimizer', 'training_results', 'wandb_id', 'ema', 'updates':  # keys
+diff --git a/utils/metrics.py b/utils/metrics.py
+index 6d2f536..828cab6 100644
+--- a/utils/metrics.py
++++ b/utils/metrics.py
+@@ -102,7 +102,7 @@ def compute_ap(recall, precision, v5_metric=False):
+     method = 'interp'  # methods: 'continuous', 'interp'
+     if method == 'interp':
+         x = np.linspace(0, 1, 101)  # 101-point interp (COCO)
+-        ap = np.trapz(np.interp(x, mrec, mpre), x)  # integrate
++        ap = np.trapezoid(np.interp(x, mrec, mpre), x)  # integrate
+     else:  # 'continuous'
+         i = np.where(mrec[1:] != mrec[:-1])[0]  # points where x axis (recall) changes
+         ap = np.sum((mrec[i + 1] - mrec[i]) * mpre[i + 1])  # area under curve

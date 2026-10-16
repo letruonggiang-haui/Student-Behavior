@@ -1,0 +1,19 @@
+__pycache__/
+*.pyc
+*.pt
+*.pth
+*.zip
+*.npz
+*.log
+runs/
+work/
+datasets/
+hf_home/
+venv/
+# EngageNet material must never be committed (dataset user agreement)
+engagenet_frames/
+labels_all.csv
+*.mp4
+*.avi
+# Manuscript source and submission tooling stay out of this repository
+paper/

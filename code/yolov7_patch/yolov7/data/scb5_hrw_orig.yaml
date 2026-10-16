@@ -1,0 +1,4 @@
+train: ~/student_behavior/work/v7_hrw/images/train
+val: ~/student_behavior/work/v7_hrw/images/val
+nc: 3
+names: [hand-raising, read, write]

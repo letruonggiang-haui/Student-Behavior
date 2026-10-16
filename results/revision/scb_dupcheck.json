@@ -1,0 +1,130 @@
+{
+ "note": "Near-duplicate audit of the SCB5 split, the same difference-hash audit already run on the\nKaggle engagement corpus and on the independent transfer set.\n\nTwo levels:\n  1. crops: the single-student crops the within-domain probe control uses, built by importing\n     probe_v2.scb_crops so the sample is identical (600 per class from the training split for\n     fitting, 300 per class from the validation split for testing). Per test crop, the smallest\n     64-bit difference-hash distance to any fitting crop.\n  2. frames: every image of the training and validation splits. Per validation frame, the\n     smallest distance to any training frame. This is the level at which the pack's own split\n     is defined, so it is the level at which a leak would matter.",
+ "crops": {
+  "n": 900,
+  "n_reference": 1800,
+  "median_min_distance": 17,
+  "within": {
+   "0": {
+    "count": 0,
+    "pct": 0.0
+   },
+   "2": {
+    "count": 0,
+    "pct": 0.0
+   },
+   "4": {
+    "count": 0,
+    "pct": 0.0
+   },
+   "6": {
+    "count": 0,
+    "pct": 0.0
+   },
+   "8": {
+    "count": 1,
+    "pct": 0.1
+   },
+   "10": {
+    "count": 1,
+    "pct": 0.1
+   }
+  },
+  "counts": {
+   "fit": {
+    "0": 600,
+    "1": 600,
+    "2": 600
+   },
+   "test": {
+    "0": 300,
+    "1": 300,
+    "2": 300
+   }
+  },
+  "near_duplicates_sharing_the_label": 0
+ },
+ "frames": {
+  "n": 1671,
+  "n_reference": 5193,
+  "median_min_distance": 16,
+  "within": {
+   "0": {
+    "count": 0,
+    "pct": 0.0
+   },
+   "2": {
+    "count": 1,
+    "pct": 0.1
+   },
+   "4": {
+    "count": 2,
+    "pct": 0.1
+   },
+   "6": {
+    "count": 6,
+    "pct": 0.4
+   },
+   "8": {
+    "count": 16,
+    "pct": 1.0
+   },
+   "10": {
+    "count": 41,
+    "pct": 2.5
+   }
+  },
+  "examples": [
+   [
+    "1119048.jpg",
+    1,
+    "13160046.jpg"
+   ],
+   [
+    "1119045.jpg",
+    4,
+    "13160041.jpg"
+   ],
+   [
+    "3001106.jpg",
+    5,
+    "3004039.jpg"
+   ],
+   [
+    "0002063.jpg",
+    6,
+    "1130023.jpg"
+   ],
+   [
+    "0014014.jpg",
+    6,
+    "1329051.jpg"
+   ],
+   [
+    "0108020.jpg",
+    6,
+    "0106005.jpg"
+   ],
+   [
+    "0002061.jpg",
+    7,
+    "1130021.jpg"
+   ],
+   [
+    "13210019.jpg",
+    7,
+    "1255025.jpg"
+   ],
+   [
+    "3001230.jpg",
+    7,
+    "1290012.jpg"
+   ],
+   [
+    "0002062.jpg",
+    8,
+    "1130023.jpg"
+   ]
+  ]
+ }
+}

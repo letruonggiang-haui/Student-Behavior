@@ -1,0 +1,175 @@
+{
+ "protocol": "Throughput under ONE timed region for every configuration (revision, 2026-09).\n\nTimed region per frame, identical for all rows: read the JPEG from disk (cv2.imread),\nUltralytics predict() on the array (letterbox, normalise, forward, NMS, result objects),\nthen, for multi-task models, the engagement head on the hooked stride-32 map, and for the\ntwo-model pipeline, the engagement classifier on the same array at 224 px.\nFP32 (Ultralytics default, no half precision), batch 1, conf 0.25, IoU 0.7, max_det 300 (Ultralytics defaults).\n20 warm-up frames, then R repeats of 200 frames; repeats are interleaved across\nconfigurations so thermal drift affects all rows alike. Reports median FPS over repeats,\nmin/max, and per-frame latency percentiles. Aborts if another process holds the GPU.",
+ "gpu": "NVIDIA L4",
+ "torch": "2.13.0+cu130",
+ "n_frames": 200,
+ "warmup": 20,
+ "repeats": 5,
+ "rows": {
+  "YOLO11n": {
+   "fps_median": 112.59,
+   "fps_min": 95.73,
+   "fps_max": 113.57,
+   "fps_repeats": [
+    95.73,
+    113.57,
+    104.55,
+    112.59,
+    113.27
+   ],
+   "latency_ms_p50": 8.73,
+   "latency_ms_p90": 11.13,
+   "weights": "~/student_behavior/runs/yolo11n_scb5/weights/best.pt"
+  },
+  "Detection-only YOLO11s": {
+   "fps_median": 111.66,
+   "fps_min": 97.11,
+   "fps_max": 113.43,
+   "fps_repeats": [
+    97.11,
+    111.66,
+    103.96,
+    113.43,
+    111.86
+   ],
+   "latency_ms_p50": 8.77,
+   "latency_ms_p90": 11.15,
+   "weights": "~/student_behavior/runs/det_scb5_s0/weights/best.pt"
+  },
+  "YOLO11m": {
+   "fps_median": 96.42,
+   "fps_min": 93.4,
+   "fps_max": 102.01,
+   "fps_repeats": [
+    96.42,
+    102.01,
+    93.4,
+    94.86,
+    101.42
+   ],
+   "latency_ms_p50": 9.73,
+   "latency_ms_p90": 12.08,
+   "weights": "~/student_behavior/runs/yolo11m_scb5/weights/best.pt"
+  },
+  "Detection-only YOLO11l": {
+   "fps_median": 75.13,
+   "fps_min": 74.53,
+   "fps_max": 81.45,
+   "fps_repeats": [
+    74.53,
+    75.03,
+    75.13,
+    81.45,
+    75.44
+   ],
+   "latency_ms_p50": 12.62,
+   "latency_ms_p90": 15.3,
+   "weights": "~/student_behavior/runs/det_l_s0/weights/best.pt"
+  },
+  "RT-DETR-l": {
+   "fps_median": 54.55,
+   "fps_min": 53.77,
+   "fps_max": 55.61,
+   "fps_repeats": [
+    54.55,
+    55.48,
+    53.77,
+    53.9,
+    55.61
+   ],
+   "latency_ms_p50": 17.77,
+   "latency_ms_p90": 20.19,
+   "weights": "~/student_behavior/runs/rtdetr_scb5/weights/best.pt"
+  },
+  "Multi-task YOLO11s, Kaggle head": {
+   "fps_median": 101.87,
+   "fps_min": 99.85,
+   "fps_max": 109.87,
+   "fps_repeats": [
+    99.85,
+    101.72,
+    101.87,
+    109.87,
+    102.44
+   ],
+   "latency_ms_p50": 9.27,
+   "latency_ms_p90": 11.72,
+   "weights": "~/student_behavior/runs/mtl_scb5_s0/weights/best.pt"
+  },
+  "Multi-task YOLO11l, Kaggle head": {
+   "fps_median": 79.46,
+   "fps_min": 73.37,
+   "fps_max": 80.44,
+   "fps_repeats": [
+    73.37,
+    80.41,
+    80.44,
+    79.46,
+    74.11
+   ],
+   "latency_ms_p50": 12.45,
+   "latency_ms_p90": 15.09,
+   "weights": "~/student_behavior/runs/mtl_l_s0/weights/best.pt"
+  },
+  "Multi-task YOLO11s, EngageNet head": {
+   "fps_median": 102.16,
+   "fps_min": 100.52,
+   "fps_max": 109.38,
+   "fps_repeats": [
+    100.52,
+    109.38,
+    102.16,
+    101.31,
+    108.99
+   ],
+   "latency_ms_p50": 9.15,
+   "latency_ms_p90": 11.65,
+   "weights": "~/student_behavior/runs/mtl_en_s_s0/weights/best.pt"
+  },
+  "Multi-task YOLO11l, EngageNet head": {
+   "fps_median": 79.46,
+   "fps_min": 74.46,
+   "fps_max": 80.69,
+   "fps_repeats": [
+    77.33,
+    80.69,
+    79.46,
+    80.54,
+    74.46
+   ],
+   "latency_ms_p50": 12.26,
+   "latency_ms_p90": 14.83,
+   "weights": "~/student_behavior/runs/mtl_en_l_s0/weights/best.pt"
+  },
+  "Two-model pipeline, YOLO11s + classifier": {
+   "fps_median": 54.27,
+   "fps_min": 50.29,
+   "fps_max": 60.39,
+   "fps_repeats": [
+    58.11,
+    50.29,
+    54.27,
+    53.46,
+    60.39
+   ],
+   "latency_ms_p50": 15.72,
+   "latency_ms_p90": 22.9,
+   "weights": "~/student_behavior/runs/det_scb5_s0/weights/best.pt"
+  },
+  "Two-model pipeline, YOLO11l + classifier": {
+   "fps_median": 44.62,
+   "fps_min": 42.32,
+   "fps_max": 45.74,
+   "fps_repeats": [
+    45.05,
+    44.42,
+    42.32,
+    44.62,
+    45.74
+   ],
+   "latency_ms_p50": 19.69,
+   "latency_ms_p90": 28.4,
+   "weights": "~/student_behavior/runs/det_l_s0/weights/best.pt"
+  }
+ }
+}

@@ -1,0 +1,12 @@
+# Versions used for every number in the paper (NVIDIA L4, driver 595.71, CUDA 13.0, Python 3.13.7)
+torch==2.13.0
+torchvision==0.28.0
+ultralytics==8.4.98
+numpy==2.5.1
+opencv-python==5.0.0.93
+pillow==12.3.0
+pandas==3.0.5
+scikit-learn==1.9.1
+matplotlib==3.11.0
+imagehash
+huggingface_hub[hf_transfer]

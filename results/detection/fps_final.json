@@ -1,0 +1,40 @@
+{
+ "MTL YOLO11s (proposed, fast)": {
+  "fps": 187.43,
+  "params_M": 9.56,
+  "kind": "multitask"
+ },
+ "MTL YOLO11l (proposed, accurate)": {
+  "fps": 104.18,
+  "params_M": 25.44,
+  "kind": "multitask"
+ },
+ "Detection-only YOLO11s": {
+  "fps": 110.31,
+  "params_M": 9.43,
+  "kind": "single"
+ },
+ "Detection-only YOLO11l": {
+  "fps": 73.94,
+  "params_M": 25.31,
+  "kind": "single"
+ },
+ "YOLO11m": {
+  "fps": 92.06,
+  "params_M": 20.06,
+  "kind": "single"
+ },
+ "RT-DETR-l": {
+  "fps": 58.07,
+  "params_M": 32.81,
+  "kind": "single"
+ },
+ "Two-model pipeline (YOLO11s + classifier)": {
+  "fps": 52.19,
+  "kind": "pipeline"
+ },
+ "Two-model pipeline (YOLO11l + classifier)": {
+  "fps": 40.64,
+  "kind": "pipeline"
+ }
+}
